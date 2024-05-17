@@ -27,6 +27,7 @@ const AddPage = () => {
     event.preventDefault();
     const body = { title, content, name: authorName, email: authorEmail };
     addForm(body);
+    navigate('/');
   };
 
   const handleCancel = () => {

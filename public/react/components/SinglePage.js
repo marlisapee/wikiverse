@@ -20,6 +20,17 @@ const SinglePage = () => {
     }
   };
 
+  const handleDelete = async (slug) => {
+    try {
+      const response = await axios.delete(`${apiURL}/wiki/${slug}`);
+      const data = response.data;
+      console.log('successfully deleted page', data);
+      navigate('/');
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   useEffect(() => {
     fetchSinglePage(slug);
   }, []);
@@ -45,6 +56,7 @@ const SinglePage = () => {
         <p>no data available</p>
       )}
       <button onClick={handleNavigate}>Go Back to WikiList</button>
+      <button onClick={() => handleDelete(page.slug)}>Delete</button>
     </>
   );
 };

@@ -22,7 +22,7 @@ export const App = () => {
 
   useEffect(() => {
     fetchPages();
-  }, []);
+  }, [pages]);
 
   return (
     <main>

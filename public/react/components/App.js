@@ -5,6 +5,7 @@ import { PagesList } from './PagesList';
 // import and prepend the api url to any fetch calls
 import apiURL from '../api';
 import SinglePage from './SinglePage';
+import AddPage from './AddPage';
 
 export const App = () => {
   const [pages, setPages] = useState([]);
@@ -31,6 +32,7 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<PagesList pages={pages} />} />
         <Route path="/pages/:slug" element={<SinglePage />} />
+        <Route path="/addnewpage" element={<AddPage />} />
       </Routes>
     </main>
   );

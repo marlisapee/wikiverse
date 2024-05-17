@@ -36,6 +36,7 @@ const SinglePage = () => {
           <p>{page.author.name}</p>
           <p>{page.author.email}</p>
           <p>Published: {page.createdAt}</p>
+          <p>Content: {page.content}</p>
           <p>Tags: </p>
           {page.tags &&
             page.tags.map((tag, idx) => <p key={idx}>{tag.name}</p>)}

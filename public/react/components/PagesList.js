@@ -1,8 +1,14 @@
 import React from 'react';
 import { Page } from './Page';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export const PagesList = ({ pages }) => {
+  const navigate = useNavigate();
+
+  const handleNavigate = () => {
+    navigate('/addnewpage');
+  };
+
   return (
     <>
       {pages.map((page, idx) => {
@@ -12,6 +18,7 @@ export const PagesList = ({ pages }) => {
           </Link>
         );
       })}
+      <button onClick={handleNavigate}>Add New Page</button>
     </>
   );
 };
